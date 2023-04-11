@@ -22,7 +22,7 @@ Usage of %s
 `, bin)
 		flag.PrintDefaults()
 	}
-	flag.StringVar(&redirectURL, "redirect", "http://127.0.0.1:8081/auth/", "URL to be redirected to after authorization.")
+	flag.StringVar(&redirectURL, "redirect", "http://127.0.0.1:8080/auth/", "URL to be redirected to after authorization.")
 	flag.StringVar(&credFile, "cred-file", "./example/github/test-clientid.github.json", "Credential JSON file")
 }
 func main() {
@@ -49,7 +49,7 @@ func main() {
 		ctx.JSON(200, gin.H{"message": "Hello from private for groups"})
 	})
 
-	router.Run("127.0.0.1:8081")
+	router.Run("127.0.0.1:8080")
 }
 
 func UserInfoHandler(ctx *gin.Context) {
